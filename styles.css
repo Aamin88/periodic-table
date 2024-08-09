@@ -1,0 +1,256 @@
+/* import font from google */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+/* resets for all elements */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* font size at root */
+html {
+  font-size: 19px;
+}
+
+/* font famioly applied on body */
+body {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+/* header styles */
+header.header {
+  -moz-position: sticky;
+  -webkit-position: sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(60, 81, 98);
+  z-index: 100;
+}
+
+header h1 {
+  text-transform: capitalize;
+  color: #fff;
+}
+
+/* styles for the image hidden*/
+.photo {
+  display: none;
+  width: 90vw;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* styles for the element containing the table */
+main {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #202125;
+}
+
+/* styles for table here */
+table {
+  margin: 80px 0px;
+  width: 90%;
+  overflow: hidden;
+}
+
+table td {
+  font-size: 15px;
+  max-width: 60px;
+  max-height: 50px;
+  padding: 0.2rem;
+  text-align: center;
+  overflow: hidden;
+  padding: 5px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+td .symbol {
+  font-weight: bolder;
+  font-size: 19px;
+  text-transform: capitalize;
+}
+
+td .name {
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+/* when table data run out space for the group name truncate it add ... to the end */
+td .chemical-group {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.info {
+  display: flex;
+  position: absolute;
+  top: 90px;
+  left: 300px;
+  border: 1px solid rebeccapurple;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(118, 118, 98);
+}
+
+.info .element {
+  text-align: center;
+  background-color: rgb(34, 34, 42);
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+.info .element > * {
+  padding: 5px;
+}
+.info .element .symbol {
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+
+.info-label > * {
+  padding: 3px;
+}
+
+/* backgound for the elements base on group */
+.nonmetal {
+  background-color: #2a4065;
+}
+
+.metalloid {
+  background-color: #523e1b;
+}
+
+.noble-gas {
+  background-color: #623842;
+}
+.alkali-metal {
+  background-color: #254d57;
+}
+
+.transition-metal {
+  background-color: #433c65;
+}
+
+.halogen {
+  background-color: #2a4065;
+}
+
+.post-transition {
+  background-color: #2e4d47;
+}
+
+.lanthanide {
+  background-color: #004a77;
+}
+
+.actinide {
+  background-color: #613b28;
+}
+
+.alkaline-earth {
+  background-color: #622e3a;
+}
+
+.actinide,
+.alkali-metal,
+.alkaline-earth,
+.lanthanide,
+.post-transition,
+.halogen,
+.noble-gas,
+.metalloid,
+.nonmetal,
+.transition-metal,
+.info {
+  transition: all 0.3s ease;
+  border: #fff 2px solid;
+}
+/* when you hover table cells with content in them */
+.actinide:hover,
+.alkali-metal:hover,
+.alkaline-earth:hover,
+.lanthanide:hover,
+.post-transition:hover,
+.halogen:hover,
+.noble-gas:hover,
+.metalloid:hover,
+.nonmetal:hover,
+.transition-metal:hover {
+  opacity: 0.8;
+  border: 2px solid #673ab7;
+  transform: scale(1.1);
+}
+/* media queries */
+
+/* when the screen is 900px or less */
+/* remove the table and display the image */
+@media screen and (max-width: 900px) {
+  header {
+    font-size: 14px;
+  }
+
+  table {
+    display: none;
+  }
+
+  .info {
+    display: none;
+  }
+
+  .photo {
+    display: block;
+  }
+}
+
+/* when the screen is 1200px or less */
+/* set width of table cover the entire page */
+@media screen and (max-width: 1200px) {
+  table {
+    width: 100%;
+  }
+
+  td .name {
+    display: none;
+  }
+
+  .info {
+    padding: 3px;
+    font-size: 15px;
+  }
+}
+
+/* when the screen is 1300px or less */
+/* remove the table data with class chemical-group */
+@media screen and (max-width: 1300px) {
+  td {
+    width: 50px;
+    height: 50px;
+  }
+  td .chemical-group {
+    display: none;
+  }
+}
