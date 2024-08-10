@@ -211,6 +211,13 @@ td .chemical-group {
   border: 2px solid #673ab7;
   transform: scale(1.1);
 }
+
+.notify {
+  background-color: red;
+  text-align: center;
+  display: none;
+}
+
 /* media queries */
 
 /* when the screen is 900px or less */
@@ -235,10 +242,6 @@ td .chemical-group {
 
   td .atomic-number {
     display: none;
-  }
-
-  .photo {
-    /* display: block; */
   }
 }
 
@@ -273,5 +276,13 @@ td .chemical-group {
 
   td .chemical-group {
     display: none;
+  }
+}
+
+@media screen and ((max-width: 650px) and (orientation: portrait)) {
+  .notify {
+    background-color: red;
+    text-align: center;
+    display: block;
   }
 }
