@@ -51,10 +51,16 @@ img {
   width: 100%;
   height: auto;
 }
+/* here the table is */
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
 /* styles for the element containing the table */
 main {
-  position: relative;
   width: 100%;
   min-height: 100vh;
   display: grid;
@@ -67,12 +73,13 @@ table {
   margin: 80px 0px;
   width: 90%;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 table td {
   font-size: 15px;
-  max-width: 60px;
-  max-height: 50px;
+  max-width: 1rem;
+  max-height: 1rem;
   padding: 0.2rem;
   text-align: center;
   overflow: hidden;
@@ -106,9 +113,9 @@ td .chemical-group {
 .info {
   display: flex;
   position: absolute;
-  top: 90px;
+  top: 20px;
   left: 300px;
-  border: 1px solid rebeccapurple;
+
   padding: 10px 15px;
   border-radius: 5px;
   color: #fff;
@@ -208,21 +215,30 @@ td .chemical-group {
 
 /* when the screen is 900px or less */
 /* remove the table and display the image */
-@media screen and (max-width: 900px) {
+
+@media screen and (max-width: 980px) {
   header {
     font-size: 14px;
   }
 
-  table {
-    display: none;
+  main {
+    padding: 0.5em;
   }
 
   .info {
     display: none;
   }
 
+  td .symbol {
+    font-size: 0.5rem;
+  }
+
+  td .atomic-number {
+    display: none;
+  }
+
   .photo {
-    display: block;
+    /* display: block; */
   }
 }
 
@@ -233,23 +249,28 @@ td .chemical-group {
     width: 100%;
   }
 
-  td .name {
-    display: none;
+  .info {
+    left: 180px;
+    top: 0px;
   }
 
-  .info {
-    padding: 3px;
-    font-size: 15px;
+  td .name {
+    display: none;
   }
 }
 
 /* when the screen is 1300px or less */
 /* remove the table data with class chemical-group */
-@media screen and (max-width: 1300px) {
+@media screen and (min-width: 1300px) {
   td {
     width: 50px;
     height: 50px;
   }
+
+  .info {
+    left: 500px;
+  }
+
   td .chemical-group {
     display: none;
   }
